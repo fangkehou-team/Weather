@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="基本设置">
+<!--        <CheckBoxPreference-->
+<!--                android:defaultValue="@string/screenlock"-->
+<!--                android:key="screenlock"-->
+<!--                android:summary="@string/summary_screenlock_preference"-->
+<!--                android:title="@string/title_screenlock_preference" />-->
+
+        <ListPreference
+                android:defaultValue="100"
+                android:dialogTitle="首页背景图"
+                android:entries="@array/background_entries"
+                android:entryValues="@array/background_values"
+                android:key="back_image"
+                android:summary="风车"
+                android:title="首页背景图" />
+
+<!--        <EditTextPreference-->
+<!--                android:defaultValue="@string/fontsize"-->
+<!--                android:dialogTitle="@string/dialog_title_fontsize_preference"-->
+<!--                android:inputType="numberDecimal"-->
+<!--                android:key="fontsize"-->
+<!--                android:summary="@string/fontsize"-->
+<!--                android:title="@string/title_fontsize_preference" />-->
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="危险设置">
+        <!--        <CheckBoxPreference-->
+        <!--                android:defaultValue="@string/screenlock"-->
+        <!--                android:key="screenlock"-->
+        <!--                android:summary="@string/summary_screenlock_preference"-->
+        <!--                android:title="@string/title_screenlock_preference" />-->
+
+        <PreferenceScreen
+            android:key="deleteall"
+            android:summary="删除所有数据并关闭应用"
+            android:title="清除所有数据" />
+
+        <!--        <EditTextPreference-->
+        <!--                android:defaultValue="@string/fontsize"-->
+        <!--                android:dialogTitle="@string/dialog_title_fontsize_preference"-->
+        <!--                android:inputType="numberDecimal"-->
+        <!--                android:key="fontsize"-->
+        <!--                android:summary="@string/fontsize"-->
+        <!--                android:title="@string/title_fontsize_preference" />-->
+
+    </PreferenceCategory>
+<!--    <PreferenceCategory android:title="@string/env_preferences">-->
+<!--        <PreferenceScreen-->
+<!--                android:key="installenv"-->
+<!--                android:summary="@string/summary_installenv_preference"-->
+<!--                android:title="@string/title_installenv_preference" />-->
+<!--        <PreferenceScreen-->
+<!--                android:key="removeenv"-->
+<!--                android:summary="@string/summary_removeenv_preference"-->
+<!--                android:title="@string/title_removeenv_preference" />-->
+<!--    </PreferenceCategory>-->
+
+</PreferenceScreen>

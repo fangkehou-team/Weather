@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="background_entries">
+        <item>风车</item>
+        <item>青山</item>
+        <item>长桥</item>
+        <item>灯塔</item>
+        <item>城市</item>
+    </string-array>
+
+    <string-array name="background_values">
+        <item>100</item>
+        <item>101</item>
+        <item>104</item>
+        <item>300</item>
+        <item>302</item>
+    </string-array>
+
+</resources>
