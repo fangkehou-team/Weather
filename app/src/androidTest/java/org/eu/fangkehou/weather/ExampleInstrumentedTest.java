@@ -7,7 +7,7 @@ import android.util.Log;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import org.eu.fangkehou.weather.bean.Province;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -40,17 +40,17 @@ public class ExampleInstrumentedTest {
     }
 
     public void generateChinaCitiesData() throws IOException {
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-        AssetManager assetManager = appContext.getApplicationContext().getAssets();
-
-        InputStream inputStream = assetManager.open("china_city_data.json");
-
-
-        Type type = new TypeToken<ArrayList<Province>>(){}.getType();
-        List<Province> provincesList = new Gson().fromJson(new JsonReader(new BufferedReader(new InputStreamReader(inputStream))), type);
-
-        Log.i("Province List", String.valueOf(provincesList.size()));
+//        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+//
+//        AssetManager assetManager = appContext.getApplicationContext().getAssets();
+//
+//        InputStream inputStream = assetManager.open("china_city_data.json");
+//
+//
+//        Type type = new TypeToken<ArrayList<Province>>(){}.getType();
+//        List<Province> provincesList = new Gson().fromJson(new JsonReader(new BufferedReader(new InputStreamReader(inputStream))), type);
+//
+//        Log.i("Province List", String.valueOf(provincesList.size()));
 
     }
 }

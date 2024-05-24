@@ -139,8 +139,6 @@ public class WeatherFragment extends Fragment {
         weatherFragmentScrollView.setOnScrollChangeListener((NestedScrollView v, int i, int scrollY, int i2, int i3) -> {
             Log.i("TAG", scrollY + "onScrollChange: " + (v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()));
 
-            //TODO: Set View To black
-
             if (scrollY == 0) {//监听滚动条到顶部
                 weatherFragmentSwipeLayout.setEnabled(true);
             } else {//滚动中
