@@ -42,20 +42,20 @@ public class WeatherApi {
     }
 
     public static void getMetroLocationResultWithLatAndLong(String latitude, String longitude, ApiCallback<MetroWeatherResult> callback) {
-        new Thread() {
-            @Override
-            public void run() {
-
-//                try {
-//                    Thread.sleep(3000);
-//                } catch (InterruptedException ignored) {
+//        new Thread() {
+//            @Override
+//            public void run() {
 //
-//                }
+////                try {
+////                    Thread.sleep(3000);
+////                } catch (InterruptedException ignored) {
+////
+////                }
+//
+//                callback.onResponse(MetroWeatherResult.parseInstance(DemoData.MetroWeatherData));
+//            }
+//        }.start();
 
-                callback.onResponse(MetroWeatherResult.parseInstance(DemoData.MetroWeatherData));
-            }
-        }.start();
-
-//        getMetroLocationResultWithLatAndLongImpl(latitude, longitude, callback);
+        getMetroLocationResultWithLatAndLongImpl(latitude, longitude, callback);
     }
 }

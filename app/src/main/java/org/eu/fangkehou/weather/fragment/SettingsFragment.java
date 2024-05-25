@@ -1,9 +1,11 @@
 package org.eu.fangkehou.weather.fragment;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -65,6 +67,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
                         })
                         .create();
                 alertDialog.show();
+                return true;
+            case "website":
+                Uri uri = Uri.parse("https://github.com/fangkehou-team/Weather");
+                startActivity(new Intent(Intent.ACTION_VIEW,uri));
+            case "version":
+            case "author":
                 return true;
             default:
                 return false;

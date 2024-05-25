@@ -48,6 +48,38 @@
         <!--                android:title="@string/title_fontsize_preference" />-->
 
     </PreferenceCategory>
+
+    <PreferenceCategory android:title="关于">
+        <!--        <CheckBoxPreference-->
+        <!--                android:defaultValue="@string/screenlock"-->
+        <!--                android:key="screenlock"-->
+        <!--                android:summary="@string/summary_screenlock_preference"-->
+        <!--                android:title="@string/title_screenlock_preference" />-->
+
+        <PreferenceScreen
+            android:key="version"
+            android:summary="1.0"
+            android:title="版本" />
+
+        <PreferenceScreen
+            android:key="website"
+            android:summary="https://github.com/fangkehou-team/Weather"
+            android:title="项目地址" />
+
+        <PreferenceScreen
+            android:key="author"
+            android:summary="lony2003"
+            android:title="作者" />
+
+        <!--        <EditTextPreference-->
+        <!--                android:defaultValue="@string/fontsize"-->
+        <!--                android:dialogTitle="@string/dialog_title_fontsize_preference"-->
+        <!--                android:inputType="numberDecimal"-->
+        <!--                android:key="fontsize"-->
+        <!--                android:summary="@string/fontsize"-->
+        <!--                android:title="@string/title_fontsize_preference" />-->
+
+    </PreferenceCategory>
 <!--    <PreferenceCategory android:title="@string/env_preferences">-->
 <!--        <PreferenceScreen-->
 <!--                android:key="installenv"-->

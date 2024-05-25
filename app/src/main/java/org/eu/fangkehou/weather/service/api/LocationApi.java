@@ -49,13 +49,13 @@ public class LocationApi {
     }
 
     public static void getAmapLocationResultWithLatAndLong(String latitude, String longitude, ApiCallback<AmapLocationResult> callback) {
-        new Thread() {
-            @Override
-            public void run() {
-                callback.onResponse(AmapLocationResult.parseInstance(DemoData.AmapLocationData));
-            }
-        }.start();
-//        getAmapLocationResultWithLatAndLongImpl(latitude, longitude, callback);
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                callback.onResponse(AmapLocationResult.parseInstance(DemoData.AmapLocationData));
+//            }
+//        }.start();
+        getAmapLocationResultWithLatAndLongImpl(latitude, longitude, callback);
     }
 
     //Metro Location
@@ -90,20 +90,20 @@ public class LocationApi {
     }
 
     public static void getMetroLocationResultWithCity(String city, ApiCallback<MetroLocationResult> callback) {
-        new Thread() {
-            @Override
-            public void run() {
-
-//                try {
-//                    Thread.sleep(1000);
-//                } catch (InterruptedException ignored) {
+//        new Thread() {
+//            @Override
+//            public void run() {
 //
-//                }
+////                try {
+////                    Thread.sleep(1000);
+////                } catch (InterruptedException ignored) {
+////
+////                }
+//
+//                callback.onResponse(MetroLocationResult.parseInstance(DemoData.MetroLocationData));
+//            }
+//        }.start();
 
-                callback.onResponse(MetroLocationResult.parseInstance(DemoData.MetroLocationData));
-            }
-        }.start();
-
-//        getMetroLocationResultWithCityImpl(city, callback);
+        getMetroLocationResultWithCityImpl(city, callback);
     }
 }
