@@ -4,6 +4,7 @@ import org.eu.fangkehou.weather.model.bean.weather.HourlyData;
 import org.eu.fangkehou.weather.model.enums.WeatherCode;
 import org.eu.fangkehou.weather.model.enums.WindDirection;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -21,7 +22,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class HourlyViewModel {
+public class HourlyViewModel implements Serializable {
     private LocalDateTime time;
     private String temperature;
     private WeatherCode weatherCode;

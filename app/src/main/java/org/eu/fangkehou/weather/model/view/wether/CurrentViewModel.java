@@ -4,6 +4,7 @@ import org.eu.fangkehou.weather.model.bean.weather.CurrentData;
 import org.eu.fangkehou.weather.model.enums.WeatherCode;
 import org.eu.fangkehou.weather.model.enums.WindDirection;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
@@ -18,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class CurrentViewModel {
+public class CurrentViewModel implements Serializable {
     private LocalDateTime updateTime;
     private String temperature;
     private String windSpeed;

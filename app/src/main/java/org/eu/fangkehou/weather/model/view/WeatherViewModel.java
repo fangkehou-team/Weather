@@ -7,6 +7,7 @@ import org.eu.fangkehou.weather.model.view.wether.DailyViewModel;
 import org.eu.fangkehou.weather.model.view.wether.HourlyViewModel;
 import org.eu.fangkehou.weather.model.view.wether.CurrentViewModel;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -21,7 +22,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class WeatherViewModel {
+public class WeatherViewModel implements Serializable {
     private CurrentViewModel currentData;
     private List<DailyViewModel> dailyData;
     private List<HourlyViewModel> hourlyData;

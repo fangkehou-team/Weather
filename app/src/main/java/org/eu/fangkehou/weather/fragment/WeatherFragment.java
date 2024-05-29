@@ -2,6 +2,7 @@ package org.eu.fangkehou.weather.fragment;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -17,17 +18,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.eu.fangkehou.weather.R;
+import org.eu.fangkehou.weather.activity.DailyWeatherActivity;
 import org.eu.fangkehou.weather.model.bean.LocationData;
 import org.eu.fangkehou.weather.model.bean.WeatherData;
 import org.eu.fangkehou.weather.model.enums.BackgroundEnums;
@@ -44,6 +48,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoField;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -75,6 +80,8 @@ public class WeatherFragment extends Fragment {
     private TextView weatherFragmentAdditionalSunriseText;
     private TextView weatherFragmentAdditionalSunsetText;
     private TextView weatherFragmentAdditionalPressureText;
+
+    private Button weatherFragmentDailyButton;
 
     private int id;
 
@@ -135,6 +142,8 @@ public class WeatherFragment extends Fragment {
 
         weatherFragmentDailyList = vg.findViewById(R.id.weather_fragment_daily_list);
         weatherFragmentHourlyRecycler = vg.findViewById(R.id.weather_fragment_hourly_recycler);
+
+        weatherFragmentDailyButton = vg.findViewById(R.id.weather_fragment_daily_button);
 
         weatherFragmentScrollView.setOnScrollChangeListener((NestedScrollView v, int i, int scrollY, int i2, int i3) -> {
             Log.i("TAG", scrollY + "onScrollChange: " + (v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight()));
@@ -239,6 +248,12 @@ public class WeatherFragment extends Fragment {
         weatherFragmentScrollView.setVisibility(View.VISIBLE);
         weatherFragmentLoadingImage.setVisibility(View.GONE);
 
+        weatherFragmentDailyButton.setOnClickListener((v)-> {
+            Intent i = new Intent(getActivity(), DailyWeatherActivity.class);
+            i.putExtra("data", weatherData);
+            startActivity(i);
+        });
+
         setupHourlyRecycler(weatherData);
         setupDailyList(weatherData);
         setupAdditionalData(weatherData);
@@ -261,7 +276,7 @@ public class WeatherFragment extends Fragment {
         weatherFragmentDailyList.setAdapter(new BaseAdapter() {
             @Override
             public int getCount() {
-                return weatherData.getDailyData().size();
+                return 3;
             }
 
             @Override
@@ -284,7 +299,21 @@ public class WeatherFragment extends Fragment {
                 ImageView dailyWeatherCode = view.findViewById(R.id.item_daily_icon);
                 TextView dailyWeatherText = view.findViewById(R.id.item_daily_temperature);
 
-                dailyDateText.setText(dailyViewModel.getTime().format(DateTimeFormatter.ofPattern("MM月dd日")));
+                String dayText = "";
+                switch (position) {
+                    case 0:
+                        dayText = "今天";
+                        break;
+                    case 1:
+                        dayText = "明天";
+                        break;
+                    case 2:
+                        dayText = "后天";
+                        break;
+                }
+
+//                dailyDateText.setText(dailyViewModel.getTime().format(DateTimeFormatter.ofPattern("MM月dd日")));
+                dailyDateText.setText(dayText);
                 dailyWeatherCode.setImageResource(dailyViewModel.getWeatherCode().getWeatherIconDay());
                 dailyWeatherText.setText("最高" + dailyViewModel.getTemperatureMax() + "/最低" + dailyViewModel.getTemperatureMin());
 

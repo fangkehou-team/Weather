@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import org.eu.fangkehou.weather.model.bean.weather.DailyData;
 import org.eu.fangkehou.weather.model.enums.WeatherCode;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -23,7 +24,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class DailyViewModel {
+public class DailyViewModel implements Serializable {
     private LocalDate time;
     private WeatherCode weatherCode;
     private String precipitationProbability;
